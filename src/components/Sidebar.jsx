@@ -353,7 +353,7 @@ const Sidebar = ({logOut}) => {
        <div>
         {sidebarLinks?.map(e => (
             <div className='border-b border-[#e5e7eb24] last-of-type:border-none flex justify-center items-center 2xl:block' key={e.active}>
-                <div className={`px-[8px] py-[4px] 2xl:py-[5px] 2xl:px-6 font-bold rounded-2xl cursor-pointer ${activeLink === e.active && 'bg-gradient-to-l from-[rgb(250_250_250)] to-[rgb(225_234_238)] transition-all'}`} onClick={() => handleClick(e.active)}>
+                <div className={`px-[8px] py-[6px] 2xl:py-[5px] 2xl:px-6 font-bold rounded-2xl cursor-pointer ${activeLink === e.active && 'bg-gradient-to-l from-[rgb(250_250_250)] to-[rgb(225_234_238)] transition-all'}`} onClick={() => handleClick(e.active)}>
                     <Link to={e.branches ? '' : e.link} className={`flex justify-between transition-all relative ${activeLink === e.active && 'text-main'}`}>
                         <div className={`flex justify-start items-center gap-3`}>
                             <FontAwesomeIcon icon={e.icon} className='text-xs 2xl:text-xl' />

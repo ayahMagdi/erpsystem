@@ -26,28 +26,28 @@ const TableStore = ({filteredItems , isSearched ,checkSearch}) => {
             <tbody className={noItems && checkSearch > 0  ? 'hidden' : 'visible'}>
                 {isSearched ? filteredItems?.map(e => (
                   <tr className='border-b border-slate-300 even:bg-tablerow' key={e.code}>
-                     <td className="px-2 py-1 lg:px-6 lg:py-3 text-xs lg:text-base" style={{border: '1px solid #00000024'}}>{e.code}</td>
-                     <td className="px-2 py-1 lg:px-6 lg:py-3 text-xs lg:text-base" style={{border: '1px solid #00000024'}}>{e.name}</td>
-                     <td className="px-2 py-1 lg:px-6 lg:py-3 text-xs lg:text-base" style={{border: '1px solid #00000024'}}>{e.unit}</td>
-                     <td className="px-2 py-1 lg:px-6 lg:py-3 text-xs lg:text-base" style={{border: '1px solid #00000024'}}>{e.income}</td>
-                     <td className="px-2 py-1 lg:px-6 lg:py-3 text-xs lg:text-base" style={{border: '1px solid #00000024'}}>{e.outcome}</td>
-                     <td className="px-2 py-1 lg:px-6 lg:py-3 text-xs lg:text-base" style={{border: '1px solid #00000024'}}>{e.avlqty}</td>
-                     <td className="px-2 py-1 lg:px-6 lg:py-3 text-xs lg:text-base" style={{border: '1px solid #00000024'}}>{e.soldqty}</td>
-                     <td className="px-2 py-1 lg:px-6 lg:py-3 text-xs lg:text-base" style={{border: '1px solid #00000024'}}>{calcStore(e.avlqty , e.soldqty)}</td>
-                     <td className="px-2 py-1 lg:px-6 lg:py-3 text-xs lg:text-base" style={{border: '1px solid #00000024'}}>{calcStore(e.avlqty , e.soldqty) * e.income}</td>
+                     <td className="px-2 py-1 lg:px-6 lg:py-3 text-[6px] lg:text-base" style={{border: '1px solid #00000024'}}>{e.code}</td>
+                     <td className="px-2 py-1 lg:px-6 lg:py-3 text-[6px] lg:text-base" style={{border: '1px solid #00000024'}}>{e.name}</td>
+                     <td className="px-2 py-1 lg:px-6 lg:py-3 text-[6px] lg:text-base" style={{border: '1px solid #00000024'}}>{e.unit}</td>
+                     <td className="px-2 py-1 lg:px-6 lg:py-3 text-[6px] lg:text-base" style={{border: '1px solid #00000024'}}>{e.income}</td>
+                     <td className="px-2 py-1 lg:px-6 lg:py-3 text-[6px] lg:text-base" style={{border: '1px solid #00000024'}}>{e.outcome}</td>
+                     <td className="px-2 py-1 lg:px-6 lg:py-3 text-[6px] lg:text-base" style={{border: '1px solid #00000024'}}>{e.avlqty}</td>
+                     <td className="px-2 py-1 lg:px-6 lg:py-3 text-[6px] lg:text-base" style={{border: '1px solid #00000024'}}>{e.soldqty}</td>
+                     <td className="px-2 py-1 lg:px-6 lg:py-3 text-[6px] lg:text-base" style={{border: '1px solid #00000024'}}>{calcStore(e.avlqty , e.soldqty)}</td>
+                     <td className="px-2 py-1 lg:px-6 lg:py-3 text-[6px] lg:text-base" style={{border: '1px solid #00000024'}}>{calcStore(e.avlqty , e.soldqty) * e.income}</td>
                   </tr>
                 ))
                 : stores?.map(e => (
                     <tr className='border-b border-slate-300 even:bg-tablerow' key={e.code}>
-                        <td className="px-2 py-1 lg:px-6 lg:py-3 text-xs lg:text-base" style={{border: '1px solid #00000024'}}>{e.code}</td>
-                        <td className="px-2 py-1 lg:px-6 lg:py-3 text-xs lg:text-base" style={{border: '1px solid #00000024'}}>{e.name}</td>
-                        <td className="px-2 py-1 lg:px-6 lg:py-3 text-xs lg:text-base" style={{border: '1px solid #00000024'}}>{e.unit}</td>
-                        <td className="px-2 py-1 lg:px-6 lg:py-3 text-xs lg:text-base" style={{border: '1px solid #00000024'}}>{e.income}</td>
-                        <td className="px-2 py-1 lg:px-6 lg:py-3 text-xs lg:text-base" style={{border: '1px solid #00000024'}}>{e.outcome}</td>
-                        <td className="px-2 py-1 lg:px-6 lg:py-3 text-xs lg:text-base" style={{border: '1px solid #00000024'}}>{e.avlqty}</td>
-                        <td className="px-2 py-1 lg:px-6 lg:py-3 text-xs lg:text-base" style={{border: '1px solid #00000024'}}>{e.soldqty}</td>
-                        <td className="px-2 py-1 lg:px-6 lg:py-3 text-xs lg:text-base" style={{border: '1px solid #00000024'}}>{calcStore(e.avlqty , e.soldqty)}</td>
-                        <td className="px-2 py-1 lg:px-6 lg:py-3 text-xs lg:text-base" style={{border: '1px solid #00000024'}}>{calcStore(e.avlqty , e.soldqty) * e.income}</td>
+                        <td className="px-2 py-1 lg:px-6 lg:py-3 text-[6px] lg:text-base" style={{border: '1px solid #00000024'}}>{e.code}</td>
+                        <td className="px-2 py-1 lg:px-6 lg:py-3 text-[6px] lg:text-base" style={{border: '1px solid #00000024'}}>{e.name}</td>
+                        <td className="px-2 py-1 lg:px-6 lg:py-3 text-[6px] lg:text-base" style={{border: '1px solid #00000024'}}>{e.unit}</td>
+                        <td className="px-2 py-1 lg:px-6 lg:py-3 text-[6px] lg:text-base" style={{border: '1px solid #00000024'}}>{e.income}</td>
+                        <td className="px-2 py-1 lg:px-6 lg:py-3 text-[6px] lg:text-base" style={{border: '1px solid #00000024'}}>{e.outcome}</td>
+                        <td className="px-2 py-1 lg:px-6 lg:py-3 text-[6px] lg:text-base" style={{border: '1px solid #00000024'}}>{e.avlqty}</td>
+                        <td className="px-2 py-1 lg:px-6 lg:py-3 text-[6px] lg:text-base" style={{border: '1px solid #00000024'}}>{e.soldqty}</td>
+                        <td className="px-2 py-1 lg:px-6 lg:py-3 text-[6px] lg:text-base" style={{border: '1px solid #00000024'}}>{calcStore(e.avlqty , e.soldqty)}</td>
+                        <td className="px-2 py-1 lg:px-6 lg:py-3 text-[6px] lg:text-base" style={{border: '1px solid #00000024'}}>{calcStore(e.avlqty , e.soldqty) * e.income}</td>
                     </tr>
                 ))}
             </tbody>

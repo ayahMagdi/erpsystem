@@ -26,7 +26,7 @@ const StorePage = ({search , searchItem}) => {
         <div className="w-1/5">
            <Sidebar logOut={confirmLogOut} />
         </div>
-        <div className="w-5/5 pl-8 h-screen flex flex-col mr-[110px] 2xl:mr-0 2xl:w-4/5">
+        <div className="w-5/5 pl-[10px] 2xl:pl-8 h-screen flex flex-col mr-[55px] 2xl:mr-0 2xl:w-4/5">
            <h2 className='text-center text-xl sm:text-2xl md:text-4xl font-bold my-6 text-main'>قائمة الاصناف</h2>
           <Search handleSearch={handleSearch} searchItem={searchItem} placeholder='ابحث بالكود' />
           <TableStore isSearched={handleSearch.length && search.length} filteredItems={handleSearch} checkSearch={search.length}  />
