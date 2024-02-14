@@ -5,7 +5,7 @@ const Login = () => {
 
   return (
     <div className='flex justify-between h-screen overflow-hidden'>
-        <div className="flex justify-center items-center text-center w-7/12">
+        <div className="flex justify-center items-center text-center w-full lg:w-7/12">
             <Form />
         </div>
         <div className='hidden lg:flex justify-start items-center relative w-5/12'>

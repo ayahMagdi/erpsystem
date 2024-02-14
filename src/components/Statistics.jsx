@@ -117,8 +117,8 @@ const Statistics = () => {
 
   return (
     <div>
-        <div className='mb-5'>
-            <div className='mt-2 grid grid-cols-5 gap-4'>
+        <div className='mb-9 md:mb-5'>
+            <div className='mt-2 xl:my-10 2xl:mt-2 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'>
                 <Statistic 
                         icon={faBoxesStacked}
                         endCount={items?.length || 100}
@@ -170,7 +170,7 @@ const Statistics = () => {
                 />
             </div>
         </div>
-        <div className='flex justify-between items-center gap-5'>
+        <div className='block md:flex justify-between items-center gap-5'>
             <BestSellers title='المنتجات الاكثر طلبا' rowName='المنتج' mostWantedItems={mostWantedItems} tableColors={tableColors} progressBars={progressBarsItems} />
             <BestSellers title='العملاء المميزين' rowName='العميل' mostWantedItems={clientsList} tableColors={tableColors} progressBars={progressBarsClients} />
         </div>

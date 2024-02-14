@@ -1,4 +1,4 @@
-import { faAdd, faBoxesStacked, faChartArea, faChartBar, faChevronDown, faChevronUp, faCircleXmark, faCoins, faEdit, faFileAlt, faFileInvoice, faFileLines, faFilePowerpoint, faFilter, faFingerprint, faGears, faGripLinesVertical, faHome, faList, faListDots, faMoneyCheck, faPhoneVolume, faPrint, faRemove, faStar, faStore, faStoreAlt, faStoreSlash, faTrash, faTrashAlt, faUserAltSlash, faUserCheck, faUserGroup, faUserPlus, faUsers, faUsersBetweenLines, faUsersCog, faUsersLine, faWallet } from '@fortawesome/free-solid-svg-icons'
+import { faAdd, faBars, faBoxesStacked, faBurger, faChartArea, faChartBar, faChevronDown, faChevronUp, faCircleXmark, faClose, faCoins, faEdit, faFileAlt, faFileInvoice, faFileLines, faFilePowerpoint, faFilter, faFingerprint, faGears, faGripLinesVertical, faHome, faList, faListDots, faMoneyCheck, faPhoneVolume, faPrint, faRemove, faStar, faStore, faStoreAlt, faStoreSlash, faTrash, faTrashAlt, faUserAltSlash, faUserCheck, faUserGroup, faUserPlus, faUsers, faUsersBetweenLines, faUsersCog, faUsersLine, faWallet } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
 import { Link , useLocation } from 'react-router-dom'
@@ -343,21 +343,22 @@ const Sidebar = ({logOut}) => {
     }, [location.pathname , localStorage.getItem('branch')])
 
   return (
-    <div className='fixed px-6 top-0 bottom-0 right-0 w-1/5 bg-gradient-to-b from-main to-[rgb(51_159_247)] text-white shadow-3xl h-full'>
+    <div className='fixed px-6 top-0 bottom-0 right-0 w-[80px] z-10 2xl:w-1/5 bg-gradient-to-b from-main to-[rgb(51_159_247)] text-white shadow-3xl h-full'>
+        <div className="flex 2xl:hidden w-12 h-12 bg-white rounded-full absolute -left-6 top-3 text-main shadow-[0_0_15px_1px_#E8EAF6;] justify-center items-center"><FontAwesomeIcon icon={faBars} /></div>
         <div className='p-7 flex justify-center rounded-full'>
             <img src={logoImg} alt='logo' className='w-40' />
         </div>
        <div>
         {sidebarLinks?.map(e => (
-            <div className='border-b border-[#e5e7eb24] last-of-type:border-none' key={e.active}>
-                <div className={`py-[5px] px-6 font-bold rounded-2xl cursor-pointer ${activeLink === e.active && 'bg-gradient-to-l from-[rgb(250_250_250)] to-[rgb(225_234_238)] transition-all'}`} onClick={() => handleClick(e.active)}>
+            <div className='border-b border-[#e5e7eb24] last-of-type:border-none flex justify-center items-center 2xl:block' key={e.active}>
+                <div className={`px-[15px] py-[10px] 2xl:py-[5px] 2xl:px-6 font-bold rounded-2xl cursor-pointer ${activeLink === e.active && 'bg-gradient-to-l from-[rgb(250_250_250)] to-[rgb(225_234_238)] transition-all'}`} onClick={() => handleClick(e.active)}>
                     <Link to={e.branches ? '' : e.link} className={`flex justify-between transition-all relative ${activeLink === e.active && 'text-main'}`}>
                         <div className={`flex justify-start items-center gap-3`}>
                             <FontAwesomeIcon icon={e.icon} />
-                            <div>{e.title}</div>
+                            <div className='hidden 2xl:block'>{e.title}</div>
                         </div>
                         {e.branches && 
-                            <div>
+                            <div className='hidden 2xl:block'>
                                 <FontAwesomeIcon icon={activeLink === e.active ? faChevronUp : faChevronDown} />
                             </div>
                         } 

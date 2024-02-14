@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import Sidebar from "../components/Sidebar"
-import { faEdit, faStore } from "@fortawesome/free-solid-svg-icons"
+import { faClose, faEdit, faStore } from "@fortawesome/free-solid-svg-icons"
 import Statistics from "../components/Statistics"
 import { Data } from "../components/handlechart/Data"
 import BarChart from "../components/handlechart/BarChart"
@@ -8,6 +8,7 @@ import axios from "axios";
 import Cookies from "universal-cookie"
 import SuccessMsg from "../components/SuccessMsg"
 import ConfirmSignout from "../components/ConfirmSignout"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Landing = () => {
 
@@ -38,12 +39,12 @@ const Landing = () => {
 
   return (
     <div>
-      <div className="flex justify-start items-start w-full gap-10">
+      <div className="block 2xl:flex justify-start items-start w-full gap-10 relative">
         {show && <SuccessMsg title='تم تسجيل الدخول بنجاح' />}
-        <div className="w-1/5">
+        <div className="absolute top-0 bottom-0 right-0 lg:static xl:w-1/5">
            <Sidebar logOut={confirmLogOut} />
         </div>
-        <div className="w-4/5 pl-8">
+        <div className="w-5/5 mr-[110px] 2xl:mr-0 2xl:w-4/5 pl-8">
           <div className="">
              <BarChart />
           </div>

@@ -53,9 +53,9 @@ const Form = () => {
     }
 
   return (
-    <form onSubmit={handleSubmit} className='px-4 w-8/12'>
-        <h2 className="text-main font-bold text-4xl mb-2">مرحبا بكم في المتجر الذكي</h2>
-        <h3 className="text-gray-400 text-lg mb-6">سعداء برؤيتكم مرة اخري</h3>
+    <form onSubmit={handleSubmit} className='px-4 w-11/12 md:w-8/12 lg:w-11/12 xl:w-8/12'>
+        <h2 className="text-main font-bold text-xl md:text-2xl xl:text-4xl mb-2">مرحبا بكم في المتجر الذكي</h2>
+        <h3 className="text-gray-400 text-sm md:text-lg mb-6">سعداء برؤيتكم مرة اخري</h3>
         <div className="mb-4 relative">
             <div className="text-main font-lg absolute top-4 px-4">
             <FontAwesomeIcon icon={faEnvelope} />

@@ -147,8 +147,8 @@ const BarChart = ({chartData}) => {
     },[outwardBills])
 
     return (
-        <div className="chart-container h-[290px] w-full my-5 flex justify-between gap-10">
-          <div className='w-2/4 h-[290px]'>
+        <div className="chart-container h-[155px] md:h-[210px] xl:[250px] 2xl:h-[290px] w-full my-5 grid grid-cols-1 md:grid-cols-2 justify-center md:justify-between gap-8">
+          <div className='w-4/4 h-full flex justify-center md:bolck'>
               <Bar  
                 data={data}
                 options = {{
@@ -181,7 +181,7 @@ const BarChart = ({chartData}) => {
                 }}
               />
           </div>
-          <div className='w-2/4 h-full'>
+          <div className='h-full hidden md:block'>
               <Bar  
                 data={data}
                 options = {{

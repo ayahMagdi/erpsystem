@@ -49,28 +49,28 @@ const BestSellers = ({mostWantedItems,title,tableColors,progressBars,rowName}) =
     // }, [stores]);
     
   return (
-    <div className='w-2/4'>
-        <h3 className='font-bold text-lg'>{title}</h3>
+    <div className='w-4/4 md:w-2/4'>
+        <h3 className='font-bold text-md text-center md:text-right md:text-lg'>{title}</h3>
         <table className="table-auto w-full text-center mt-3" style={{borderCollapse: 'collapse'}}>
                 <thead className="text-gray-400">
                     <tr className='border-b border-slate-100'>
-                        <th scope="col" className="px-6 py-3 text-sm">#</th>
-                        <th scope="col" className="px-6 py-3 text-sm">{`اسم ${rowName}`}</th>
-                        <th scope="col" className="px-6 py-3 text-sm">الطلبات</th>
-                        <th scope="col" className="px-6 py-3 text-sm">البيع</th>
+                        <th scope="col" className="px-2 py-1 lg:px-6 lg:py-2 xl:py-1 2xl:py-2 text-xs md:text-sm">#</th>
+                        <th scope="col" className="px-2 py-1 lg:px-6 lg:py-2 xl:py-1 2xl:py-2 text-xs md:text-sm">{`اسم ${rowName}`}</th>
+                        <th scope="col" className="px-2 py-1 lg:px-6 lg:py-2 xl:py-1 2xl:py-2 text-xs md:text-sm">الطلبات</th>
+                        <th scope="col" className="px-2 py-1 lg:px-6 lg:py-2 xl:py-1 2xl:py-2 text-xs md:text-sm">البيع</th>
                     </tr>
                 </thead>
                 <tbody>
                   {mostWantedItems?.map((e, i) => (
                     <tr className="border-b border-slate-100 last-of-type:border-0" key={`item-${i}`}>
-                      <td className="px-6 py-2 text-sm">{`0${i + 1}`}</td>
-                      <td className="px-6 py-2 text-sm">{e.name}</td>
-                      <td className="px-6 py-2 w-6/12">
+                      <td className="px-2 py-1 lg:px-6 lg:py-2 xl:py-1 2xl:py-2 text-xs md:text-sm">{`0${i + 1}`}</td>
+                      <td className="px-2 py-1 lg:px-6 lg:py-2 xl:py-1 2xl:py-2 text-xs md:text-sm">{e.name}</td>
+                      <td className="px-2 py-1 lg:px-6 lg:py-2 text-xs xl:py-1 2xl:py-2 md:text-sm w-6/12">
                         <div className="w-full rounded-full h-1 relative" style={{ backgroundColor: tableColors[i].progressBg }}>
                           <div className="h-1 rounded-full absolute left-0" style={{ width: `${progressBars[i]?.progress}%`, backgroundColor: tableColors[i].progress }}></div>
                         </div>
                       </td>
-                      <td className="px-6 py-2 text-sm">
+                      <td className="px-2 py-1 lg:px-6 lg:py-2 xl:py-1 2xl:py-2 text-xs md:text-sm">
                         <div className="rounded-md border px-2 py-1" style={{ backgroundColor: tableColors[i].percentageBg, borderColor: tableColors[i].progress }}>{Math.round(progressBars[i]?.progress)}%</div>
                       </td>
                     </tr>
