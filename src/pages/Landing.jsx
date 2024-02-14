@@ -44,7 +44,7 @@ const Landing = () => {
         <div className="absolute top-0 bottom-0 right-0 lg:static xl:w-1/5">
            <Sidebar logOut={confirmLogOut} />
         </div>
-        <div className="w-5/5 mr-[110px] 2xl:mr-0 2xl:w-4/5 pl-8">
+        <div className="w-5/5 pl-[10px] 2xl:pl-8 h-screen flex flex-col mr-[55px] 2xl:mr-0 2xl:w-4/5">
           <div className="">
              <BarChart />
           </div>
