@@ -118,7 +118,7 @@ const Statistics = () => {
   return (
     <div>
         <div className='mb-9 md:mb-5'>
-            <div className='mt-2 xl:my-10 2xl:mt-2 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4'>
+            <div className='mt-2 xl:my-10 2xl:mt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4'>
                 <Statistic 
                         icon={faBoxesStacked}
                         endCount={items?.length || 100}

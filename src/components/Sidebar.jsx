@@ -343,7 +343,7 @@ const Sidebar = ({logOut}) => {
     }, [location.pathname , localStorage.getItem('branch')])
 
   return (
-    <div className='fixed px-6 top-0 bottom-0 right-0 w-[80px] z-10 2xl:w-1/5 bg-gradient-to-b from-main to-[rgb(51_159_247)] text-white shadow-3xl h-full'>
+    <div className='fixed px-6 top-0 bottom-0 right-0 w-[10px] sm:w-[80px] z-10 2xl:w-1/5 bg-gradient-to-b from-main to-[rgb(51_159_247)] text-white shadow-3xl h-full'>
         <div className="flex 2xl:hidden w-12 h-12 bg-white rounded-full absolute -left-6 top-3 text-main shadow-[0_0_15px_1px_#E8EAF6;] justify-center items-center"><FontAwesomeIcon icon={faBars} /></div>
         <div className='p-7 flex justify-center rounded-full'>
             <img src={logoImg} alt='logo' className='w-40' />
