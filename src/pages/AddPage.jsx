@@ -2,6 +2,7 @@ import { useState } from "react"
 import ConfirmSignout from "../components/ConfirmSignout"
 import Sidebar from "../components/Sidebar"
 import AddProduct from "../components/handleproducts/AddProduct"
+import GlobalTitle from "../components/globalComponents/GlobalTitle"
 
 const AddPage = ({isAdded}) => {
 
@@ -13,11 +14,12 @@ const AddPage = ({isAdded}) => {
 
   return (
     <div>
-    <div className="flex justify-start items-start w-full gap-10">
+    <div className="block 2xl:flex justify-start items-start w-full gap-10">
       <div className="w-1/5">
          <Sidebar logOut={confirmLogOut} />
       </div>
-      <div className="w-4/5 pl-8">
+      <div className="w-5/5 2xl:w-4/5 px-[10px] 2xl:pl-8 h-screen">
+         <GlobalTitle title='اضافة منتج جديد' />
          <AddProduct isAdded={isAdded} />
       </div>
       {logOut && <ConfirmSignout handleCancel={cancelLogOut} />}

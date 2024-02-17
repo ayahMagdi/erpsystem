@@ -7,6 +7,7 @@ import ConfirmationButton from '../components/ConfirmationButton';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import ConfirmSignout from '../components/ConfirmSignout';
+import GlobalTitle from '../components/globalComponents/GlobalTitle';
 
 const SupplierReduction = ({recordReduction}) => {
 
@@ -85,24 +86,25 @@ const SupplierReduction = ({recordReduction}) => {
 
   return (
     <div>
-      <div className="flex justify-start items-start w-full gap-10">
+      <div className="block 2xl:flex justify-start items-start w-full gap-10">
           <div className="w-1/5">
             <Sidebar logOut={confirmLogOut} />
           </div>
-          <div className="w-4/5 pl-8 h-screen flex flex-col">
+          <div className="w-5/5 2xl:w-4/5 px-[10px] 2xl:pl-8 h-screen flex flex-col">
+            <GlobalTitle title='تنزيل الحساب' />
           <FormReduction 
-          codeText='كود المورد'
-          nameText='اسم المورد'
-          codeval={reductionInfo.code}
-          nameval={reductionInfo.name}
-          dateval={reductionInfo.date}
-          reductionval={reductionInfo.reduction}
-          handleChange={handleChange}
-          handleSubmit={handleSubmit}
-          checkTotal={checkTotal}
-          checkValue={checkValue}
+              codeText='كود المورد'
+              nameText='اسم المورد'
+              codeval={reductionInfo.code}
+              nameval={reductionInfo.name}
+              dateval={reductionInfo.date}
+              reductionval={reductionInfo.reduction}
+              handleChange={handleChange}
+              handleSubmit={handleSubmit}
+              checkTotal={checkTotal}
+              checkValue={checkValue}
        />
-       <ModelBtns form='my-form' handlecancel={() => setShow(true)} title="تسجيل" cancelTitle='الغاء' btnStyle={'w-60 py-3 text-lg'} margin={'mt-9'} />
+       <ModelBtns form='my-form' handlecancel={() => setShow(true)} title="تسجيل" cancelTitle='الغاء' btnStyle={'w-60 py-3 text-lg'} margin={'mt-5'} />
        <TableReduction listReduction={uniqueDataInvoice} />
        {show && <ConfirmationButton title='هل تريد الغاء التسجيل؟' confirm={cancelAdd} cancel={() => setShow(false)} />}
           </div>

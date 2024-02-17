@@ -1,10 +1,14 @@
+import GlobalTableHead from "../globalComponents/GlobalTableHead"
 
 const TableInwardbills = ({invoicesList,code,name,height}) => {
+
+    const tableHead=['رقم الفاتورة','التاريخ',code,name,'كود المنتج','اسم المنتج','الوحدة','الكمية','السعر','الاجمالي','اجمالي الفاتورة','نسبة الخصم','اجمالي بعد الخصم','تنزيل','باقي الحساب']
     
   return (
     <div className={`mb-6 mx-auto w-full border shadow overflow-y-auto`}>
         <table className="table-auto w-full text-center" style={{borderCollapse: 'collapse'}}>
-            <thead className="sticky top-0 bg-main text-white border-b">
+            <GlobalTableHead data={tableHead} />
+            {/* <thead className="sticky top-0 bg-main text-white border-b">
                 <tr className='border-b border-slate-300'>
                     <th scope="col" className="px-1 py-4 text-sm font-bold" style={{border: '1px solid #00000024'}}>رقم الفاتورة</th>
                     <th scope="col" className="px-1 py-4 text-sm font-bold" style={{border: '1px solid #00000024'}}>التاريخ</th>
@@ -22,42 +26,42 @@ const TableInwardbills = ({invoicesList,code,name,height}) => {
                     <th scope="col" className="px-1 py-4 text-sm font-bold" style={{border: '1px solid #00000024'}}>تنزيل</th>
                     <th scope="col" className="px-1 py-4 text-sm font-bold" style={{border: '1px solid #00000024'}}>باقي الحساب</th>
                 </tr>
-            </thead>
+            </thead> */}
             <tbody>
             {invoicesList?.map((e, rowIndex) => (
                     <tr className='border-b border-slate-300' key={rowIndex}>
                         {e.invoice.rowSpan ? (
-                            <td rowSpan={e.invoice.rowSpan} className="p-2 text-sm" style={{border: '1px solid #00000024'}}>{e.invoice.title}</td>
+                            <td rowSpan={e.invoice.rowSpan} className="text-[6px] px-2 py-1 md:py-2 md:text-sm" style={{border: '1px solid #00000024'}}>{e.invoice.title}</td>
                         ) : ''}
                         {e.invoice.rowSpan ? (
-                            <td rowSpan={e.invoice.rowSpan} className="p-2 text-sm" style={{border: '1px solid #00000024'}}>{e.date}</td>
+                            <td rowSpan={e.invoice.rowSpan} className="text-[6px] px-2 py-1 md:py-2 md:text-sm" style={{border: '1px solid #00000024'}}>{e.date}</td>
                         ) : ''}
                         {e.invoice.rowSpan ? (
-                            <td rowSpan={e.invoice.rowSpan} className="p-2 text-sm" style={{border: '1px solid #00000024'}}>{e.supplierCode}</td>
+                            <td rowSpan={e.invoice.rowSpan} className="text-[6px] px-2 py-1 md:py-2 md:text-sm" style={{border: '1px solid #00000024'}}>{e.supplierCode}</td>
                         ) : ''}
                         {e.invoice.rowSpan ? (
-                            <td rowSpan={e.invoice.rowSpan} className="p-2 text-sm" style={{border: '1px solid #00000024'}}>{e.supplierName || e.clientName}</td>
+                            <td rowSpan={e.invoice.rowSpan} className="text-[6px] px-2 py-1 md:py-2 md:text-sm" style={{border: '1px solid #00000024'}}>{e.supplierName || e.clientName}</td>
                         ) : ''}
-                        <td className="p-2 text-sm" style={{border: '1px solid #00000024'}}>{e.itemCode}</td>
-                        <td className="p-2 text-sm" style={{border: '1px solid #00000024'}}>{e.itemName}</td>
-                        <td className="p-2 text-sm" style={{border: '1px solid #00000024'}}>{e.unit}</td>
-                        <td className="p-2 text-sm" style={{border: '1px solid #00000024'}}>{e.qty}</td>
-                        <td className="p-2 text-sm" style={{border: '1px solid #00000024'}}>{e.price}</td>
-                        <td className="p-2 text-sm" style={{border: '1px solid #00000024'}}>{e.total}</td>
+                        <td className="text-[6px] px-2 py-1 md:py-2 md:text-sm" style={{border: '1px solid #00000024'}}>{e.itemCode}</td>
+                        <td className="text-[6px] px-2 py-1 md:py-2 md:text-sm" style={{border: '1px solid #00000024'}}>{e.itemName}</td>
+                        <td className="text-[6px] px-2 py-1 md:py-2 md:text-sm" style={{border: '1px solid #00000024'}}>{e.unit}</td>
+                        <td className="text-[6px] px-2 py-1 md:py-2 md:text-sm" style={{border: '1px solid #00000024'}}>{e.qty}</td>
+                        <td className="text-[6px] px-2 py-1 md:py-2 md:text-sm" style={{border: '1px solid #00000024'}}>{e.price}</td>
+                        <td className="text-[6px] px-2 py-1 md:py-2 md:text-sm" style={{border: '1px solid #00000024'}}>{e.total}</td>
                         {e.invoice.rowSpan ? (
-                            <td rowSpan={e.invoice.rowSpan} className="p-2 text-sm" style={{border: '1px solid #00000024'}}>{e.totalbill}</td>
-                        ) : ''}
-                        {e.invoice.rowSpan ? (
-                            <td rowSpan={e.invoice.rowSpan} className="p-2 text-sm" style={{border: '1px solid #00000024'}}>{e.discount || 0}</td>
+                            <td rowSpan={e.invoice.rowSpan} className="text-[6px] px-2 py-1 md:py-2 md:text-sm" style={{border: '1px solid #00000024'}}>{e.totalbill}</td>
                         ) : ''}
                         {e.invoice.rowSpan ? (
-                            <td rowSpan={e.invoice.rowSpan} className="p-2 text-sm" style={{border: '1px solid #00000024'}}>{e.totalwd}</td>
+                            <td rowSpan={e.invoice.rowSpan} className="text-[6px] px-2 py-1 md:py-2 md:text-sm" style={{border: '1px solid #00000024'}}>{e.discount || 0}</td>
                         ) : ''}
                         {e.invoice.rowSpan ? (
-                            <td rowSpan={e.invoice.rowSpan} className="p-2 text-sm" style={{border: '1px solid #00000024'}}>{e.reduction || 0}</td>
+                            <td rowSpan={e.invoice.rowSpan} className="text-[6px] px-2 py-1 md:py-2 md:text-sm" style={{border: '1px solid #00000024'}}>{e.totalwd}</td>
                         ) : ''}
                         {e.invoice.rowSpan ? (
-                            <td rowSpan={e.invoice.rowSpan} className="p-2 text-sm" style={{border: '1px solid #00000024'}}>{e.remaining}</td>
+                            <td rowSpan={e.invoice.rowSpan} className="text-[6px] px-2 py-1 md:py-2 md:text-sm" style={{border: '1px solid #00000024'}}>{e.reduction || 0}</td>
+                        ) : ''}
+                        {e.invoice.rowSpan ? (
+                            <td rowSpan={e.invoice.rowSpan} className="text-[6px] px-2 py-1 md:py-2 md:text-sm" style={{border: '1px solid #00000024'}}>{e.remaining}</td>
                         ) : ''}
                     </tr>
                     )

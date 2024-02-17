@@ -1,5 +1,5 @@
 import React from 'react'
-import GlobalTableHead from '../GlobalTableModel/GlobalTableHead'
+import GlobalTableHead from '../globalComponents/GlobalTableHead'
 
 const TableReports = ({dataList}) => {
 
@@ -12,14 +12,14 @@ const TableReports = ({dataList}) => {
             <tbody> 
               {dataList?.map((e , i) => 
               (<tr className='border-b border-slate-300 even:bg-tablerow' key={i}> 
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{e.invoice}</td> 
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{new Date(e.date).toLocaleDateString()}</td> 
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{ e.supplierName || e.clientName}</td> 
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{e.itemCode}</td> 
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{e.itemName}</td> 
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{e.clientName ? 'مبيعات' :  'مشتريات'}</td> 
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{e.clientName ? 0 : e.qty}</td> 
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{e.clientName ? e.qty : 0}</td> 
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{e.invoice}</td> 
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{new Date(e.date).toLocaleDateString()}</td> 
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{ e.supplierName || e.clientName}</td> 
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{e.itemCode}</td> 
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{e.itemName}</td> 
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{e.clientName ? 'مبيعات' :  'مشتريات'}</td> 
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{e.clientName ? 0 : e.qty}</td> 
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{e.clientName ? e.qty : 0}</td> 
                  </tr> )
               )} 
            </tbody>

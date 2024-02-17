@@ -9,6 +9,7 @@ import PrintData from '../components/printdata/PrintData'
 import Goback from '../components/Goback'
 import ConfirmSignout from '../components/ConfirmSignout'
 import SuccessMsg from '../components/SuccessMsg'
+import GlobalTitle from '../components/globalComponents/GlobalTitle'
 
 const ExpensesPage = ({addMsg,editMsg ,getRecord , editedExpenses }) => {
 
@@ -81,12 +82,12 @@ const ExpensesPage = ({addMsg,editMsg ,getRecord , editedExpenses }) => {
 
   return (
     <div>
-      <div className="flex justify-start items-start w-full gap-10">
+      <div className="block 2xl:flex justify-start items-start w-full gap-10">
           <div className="w-1/5">
             <Sidebar logOut={confirmLogOut} />
           </div>
-          <div className="w-4/5 pl-8 h-screen flex flex-col">
-            <h2 className='text-center text-3xl mt-5 mb-3 font-bold text-main'>المصاريف</h2>
+          <div className="w-5/5 2xl:w-4/5 px-[10px] 2xl:pl-8 h-screen flex flex-col">
+            <GlobalTitle title='المصاريف' />
             {addMsg ? <SuccessMsg title='تمت اضافة المصروف' /> 
               : deletedMsg ? <SuccessMsg title='تم حذف المصروف' /> 
               : editMsg ? <SuccessMsg title='تم تعديل المصروف' /> 

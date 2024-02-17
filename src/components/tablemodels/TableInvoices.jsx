@@ -2,8 +2,8 @@ import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useEffect, useState } from "react";
 import ConfirmDelete from "../ConfirmDelete";
-import GlobalTableHead from "../GlobalTableModel/GlobalTableHead";
-import GlobalTableBody from "../GlobalTableModel/GlobalTableBody";
+import GlobalTableHead from "../globalComponents/GlobalTableHead";
+import GlobalTableBody from "../globalComponents/GlobalTableBody";
 
 const TableInvoices = ({purchases , handleDelete ,deletCode , getRecord ,handleEdit}) => {
 

@@ -123,9 +123,8 @@ const EditProduct = ({record , isEdited}) => {
     }
 
   return (
-    <div className='mt-8'>
+    <div>
         <FormItemsModel 
-                title="تعديل المنتج"
                 handleSubmit={handleSubmit}
                 handleChange={handleChange}
                 codeVal={newArr.code}
@@ -140,9 +139,8 @@ const EditProduct = ({record , isEdited}) => {
                 codeExist={codeExist}
                 options={options}
                 isDisabled={true}
-                // handleSelectChange={handleSelectChange}
         />
-        <ModelBtns handlecancel={() => setShow(true)} form='my-form' title="تعديل" cancelTitle='الغاء' btnStyle={'w-60 py-3 text-lg'} margin={'mt-10'} />
+        <ModelBtns handlecancel={() => setShow(true)} form='my-form' title="تعديل" cancelTitle='الغاء' bigOne='bigOne' margin={'mt-7 mb-10 md:mt-10'} />
         {show && <ConfirmationButton title='هل تريد الغاء التعديل؟' confirm={cancelEdit} cancel={() => setShow(false)} />}
     </div>
   )

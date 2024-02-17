@@ -66,7 +66,7 @@ const EditExpenses = ({isEdited,expense}) => {
         dateVal={newArr.date}
         reasonVal={newArr.reason}
         />
-        <ModelBtns handlecancel={cancelEdit} form='my-form' title="تسجيل" cancelTitle='الغاء' btnStyle={'w-60 py-3 text-lg'} margin={'mt-10'} />
+        <ModelBtns handlecancel={cancelEdit} form='my-form' title="تسجيل" cancelTitle='الغاء' btnStyle={'w-60 py-3 text-lg'} margin={'mt-5 md:mt-10'} />
     </div>
   )
 }

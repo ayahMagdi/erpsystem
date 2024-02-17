@@ -71,9 +71,8 @@ const AddClient = ({isAdded}) => {
 
 
   return (
-    <div className='mt-8'>
+    <div>
        <FormClientsModel 
-          title="اضافة عميل جديد" 
           handleSubmit={handleSubmit} 
           handleChange={handleChange} 
           codeVal={clientInfo.code}
@@ -83,7 +82,7 @@ const AddClient = ({isAdded}) => {
           checkPhone={checkPhone}
           nameExist={nameExist}
         />
-       <ModelBtns handlecancel={() => setShow(true)} form='my-form' title="تسجيل" cancelTitle='الغاء' btnStyle={'w-60 py-3 text-lg'} margin={'mt-10'} />
+       <ModelBtns handlecancel={() => setShow(true)} form='my-form' title="تسجيل" cancelTitle='الغاء' bigOne='bigOne' margin={'mt-7 mb-10 md:mt-10'} />
        {show && <ConfirmationButton title='هل تريد الغاء التسجيل؟' confirm={cancelAdd} cancel={() => setShow(false)} />}
     </div>
   )

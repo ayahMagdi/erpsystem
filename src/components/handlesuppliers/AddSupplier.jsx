@@ -70,9 +70,8 @@ const AddSupplier = ({isAdded}) => {
 }
 
   return (
-    <div className='mt-8'>
+    <div>
        <FormSuppliersModel 
-           title="اضافة مورد جديد" 
            handleSubmit={handleSubmit} 
            handleChange={handleChange} 
            codeVal={supplierInfo.code}
@@ -81,7 +80,7 @@ const AddSupplier = ({isAdded}) => {
            checkPhone={checkPhone}
            nameExist={nameExist}
        />
-       <ModelBtns handlecancel={() => setShow(true)} form='my-form' title="تسجيل" cancelTitle='الغاء' btnStyle={'w-60 py-3 text-lg'} margin={'mt-10'} />
+       <ModelBtns handlecancel={() => setShow(true)} form='my-form' title="تسجيل" cancelTitle='الغاء' bigOne='bigOne' margin={'mt-7 mb-10 md:mt-10'} />
        {show && <ConfirmationButton title='هل تريد الغاء التسجيل؟' confirm={cancelAdd} cancel={() => setShow(false)} />}
     </div>
   )

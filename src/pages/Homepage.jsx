@@ -39,23 +39,25 @@ const Homepage = ({searchItem , search}) => {
 
   return (
     <div>
-      <div className="flex justify-start items-start w-full gap-10">
+      <div className="block 2xl:flex justify-start items-start w-full gap-10">
         <div className="w-1/5">
            <Sidebar logOut={confirmLogOut} />
         </div>
-        <div className="w-4/5 pl-8 mt-5">
-           <Search 
-              handleSearch={() => handleSearch}  
-              searchItem={searchItem}
-              placeholder='ابحث بالاسم' 
-           />
-           <Content 
-              categorys={search?.length > 0 && handleSearch?.length === 0 ? [] : categorys} 
-              isSearched={handleSearch?.length && search?.length} 
-              filteredItems={handleSearch}
-           />
+        <div className="w-5/5 2xl:w-4/5 px-[10px] 2xl:pl-8 h-screen">
+          <div className="mt-5">
+            <Search 
+                handleSearch={() => handleSearch}  
+                searchItem={searchItem}
+                placeholder='ابحث بالاسم' 
+            />
+            <Content 
+                categorys={search?.length > 0 && handleSearch?.length === 0 ? [] : categorys} 
+                isSearched={handleSearch?.length && search?.length} 
+                filteredItems={handleSearch}
+            />
+          </div>
+          {logOut && <ConfirmSignout handleCancel={cancelLogOut} />}
         </div>
-        {logOut && <ConfirmSignout handleCancel={cancelLogOut} />}
       </div>
     </div>
     

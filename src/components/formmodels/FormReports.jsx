@@ -1,12 +1,36 @@
 import Select from 'react-select'
+import GlobalSelectbox from '../globalComponents/GlobalSelectbox'
 
 const FormReports = ({handleSubmit , codeoptions ,codeval ,handleChangeCodes ,nameoptions ,nameval ,handleChangeNames ,actionoptions ,actionval ,handleChangeActions}) => {
   return (
-    <div className='mt-5'>
-    <h2 className='text-center text-3xl font-bold text-main'>حركة الاصناف</h2>
-    <form className='mt-5' onSubmit={handleSubmit} id='my-form'>
-        <div className='grid grid-cols-3 gap-6 mb-4'>
-            <div>
+    <div>
+    <form onSubmit={handleSubmit} id='my-form'>
+        <div className='grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6 mb-4'>
+            <GlobalSelectbox 
+              title='كود الصنف'
+              options={codeoptions}
+              name='code'
+              placeholder='اختر كود الصنف'
+              handleChange={handleChangeCodes}
+              value={codeval}
+            />
+            <GlobalSelectbox 
+              title='اسم الصنف'
+              options={nameoptions}
+              name='name'
+              placeholder='اختر اسم الصنف'
+              handleChange={handleChangeNames}
+              value={nameval}
+            />
+            <GlobalSelectbox 
+              title='نوع الحركة'
+              options={actionoptions}
+              name='itemname'
+              placeholder='اختر نوع الحركة'
+              handleChange={handleChangeActions}
+              value={actionval}
+            />
+            {/* <div>
                 <label className='mb-2 block font-bold'>كود الصنف</label>
                 <Select
                     closeMenuOnSelect={true}
@@ -26,8 +50,8 @@ const FormReports = ({handleSubmit , codeoptions ,codeval ,handleChangeCodes ,na
                         }),
                       }}
               />
-            </div>
-            <div>
+            </div> */}
+            {/* <div>
                 <label className='mb-2 block font-bold'>اسم الصنف</label>
                 <Select
                     closeMenuOnSelect={true}
@@ -46,8 +70,8 @@ const FormReports = ({handleSubmit , codeoptions ,codeval ,handleChangeCodes ,na
                         }),
                       }}
               />
-            </div> 
-            <div>
+            </div>  */}
+            {/* <div>
                 <label className='mb-2 block font-bold'>نوع الحركة</label>
                 <Select
                     closeMenuOnSelect={true}
@@ -66,7 +90,7 @@ const FormReports = ({handleSubmit , codeoptions ,codeval ,handleChangeCodes ,na
                         }),
                       }}
               />
-            </div> 
+            </div>  */}
         </div>
     </form>
   </div> 

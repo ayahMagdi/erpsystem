@@ -6,6 +6,7 @@ import { useStateValue } from '../context/stateProvider'
 import { isEqual } from 'lodash'
 import TableReports from '../components/tablemodels/TableReports'
 import Reports from '../components/handleinvoices/Reports'
+import GlobalTitle from '../components/globalComponents/GlobalTitle'
 
 const ReportsPage = () => {
 
@@ -145,11 +146,12 @@ const ReportsPage = () => {
 
   return (
     <div>
-    <div className="flex justify-start items-start w-full gap-10">
+    <div className="block 2xl:flex justify-start items-start w-full gap-10">
         <div className="w-1/5">
           <Sidebar logOut={confirmLogOut} />
         </div>
-        <div className="w-4/5 pl-8 h-screen flex flex-col">
+        <div className="w-5/5 2xl:w-4/5 px-[10px] 2xl:pl-8 h-screen flex flex-col">
+          <GlobalTitle title='حركة الاصناف' />
           <Reports
             handlecancel={handlecancel} 
             handleChangeCodes={(value) => handleSelectChange(value, 'filtercodes')}
@@ -165,10 +167,10 @@ const ReportsPage = () => {
         />
         <TableReports dataList={filtrationArry !== null && matched && filter ? filtrationArry : collectDataWithType} />
         {filtrationArry !== null && matched && filter && 
-            <div className='border p-2 w-2/8 mr-auto grid grid-cols-3 items-center text-center rounded-md border-main'>
-                <div className='border-l p-2 text-sm font-bold border-main'> الوارد : <span className='text-main font-extrabold'>{qty_in}</span></div>
-                <div className='border-l p-2 text-sm font-bold border-main'> الصادر : <span className='text-main font-extrabold'>{qty_out}</span></div>
-                <div className='p-2 text-sm font-bold'> المتاح : <span className='text-main font-extrabold'>{qty_avl}</span></div>
+            <div className='border p-1 md:p-2 w-2/8 mr-auto grid grid-cols-3 items-center text-center rounded-md border-main'>
+                <div className='border-l p-1 md:p-2 text-xs md:text-sm font-bold border-main'> الوارد : <span className='text-main font-extrabold'>{qty_in}</span></div>
+                <div className='border-l p-1 md:p-2 text-xs md:text-sm font-bold border-main'> الصادر : <span className='text-main font-extrabold'>{qty_out}</span></div>
+                <div className='p-1 md:p-2 text-xs md:text-sm font-bold'> المتاح : <span className='text-main font-extrabold'>{qty_avl}</span></div>
             </div>
           }
           <Goback />

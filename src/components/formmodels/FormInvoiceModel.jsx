@@ -1,11 +1,64 @@
 import React from 'react'
+import AltGlobalInput from '../globalComponents/AltGlobalInput'
 
 const FormInvoiceModel = ({handleSubmit , handleChange,discountDisabled ,handleInputChange,discountErr,totalDisabled,reductionErr , totalVal ,discountVal,totalwdVal , reductionVal , remainingVal , itemsVal}) => {
   return (
     <div>
         <form className='my-4' onSubmit={handleSubmit} id='my-form'>
-            <div className='grid grid-cols-6 gap-6'>
-                <div>
+            <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-6'>
+              <AltGlobalInput
+                    title='اجمالي الفاتورة'
+                    name='total'
+                    value={totalVal}
+                    placeholder='10000'
+                    handleChange={handleChange}
+                    disabled
+                />
+                 <AltGlobalInput 
+                    title='نسبة الخصم'
+                    name='discount'
+                    value={discountVal}
+                    firstErr={discountErr}
+                    placeholder='10%'
+                    handleChange={handleChange}
+                    disabled={discountDisabled}
+                    firstErrMsg='ادخل نسبة خصم صحيحة'
+                />
+                 <AltGlobalInput 
+                    title='الاجمالي بعد الخصم'
+                    name='totalwd'
+                    value={totalwdVal}
+                    placeholder='10000'
+                    handleChange={handleChange}
+                    disabled
+                />
+                 <AltGlobalInput 
+                    title='تنزيل'
+                    name='reduction'
+                    value={reductionVal}
+                    firstErr={reductionErr}
+                    placeholder='2000'
+                    handleChange={handleChange}
+                    disabled={totalDisabled}
+                    firstErrMsg='لا يمكن ان تكون قيمة التنزيل اكبر من باقي الحساب'
+                />
+                  <AltGlobalInput 
+                    title='باقي الحساب'
+                    name='remaining'
+                    value={remainingVal}
+                    placeholder='10000'
+                    handleChange={handleChange}
+                    disabled
+                />
+                  <AltGlobalInput 
+                    title='عدد الاصناف'
+                    name='items'
+                    value={itemsVal}
+                    placeholder='5'
+                    handleChange={handleChange}
+                    disabled
+                />
+                {/* <div>
                     <label className='mb-2 block font-bold'>اجمالي الفاتورة</label>
                     <input
                         type='text'
@@ -16,8 +69,8 @@ const FormInvoiceModel = ({handleSubmit , handleChange,discountDisabled ,handleI
                         placeholder='مثال (123456789)'
                         value={totalVal}
                     />
-                </div>
-                <div>
+                </div> */}
+                {/* <div>
                     <label className='mb-2 block font-bold'>نسبة الخصم</label>
                     <input
                         type='text'
@@ -33,8 +86,8 @@ const FormInvoiceModel = ({handleSubmit , handleChange,discountDisabled ,handleI
                         value={discountVal}
                     />
                     {discountErr && <p className='text-sm text-red-500 m-0'>ادخل نسبة خصم صحيحة</p>}
-                </div> 
-                <div>
+                </div>  */}
+                {/* <div>
                     <label className='mb-2 block font-bold'>الاجمالي بعد الخصم</label>
                     <input
                         type='text'
@@ -45,8 +98,8 @@ const FormInvoiceModel = ({handleSubmit , handleChange,discountDisabled ,handleI
                         onChange={handleChange}
                         value={totalwdVal}
                     />
-                </div>
-                <div>
+                </div> */}
+                {/* <div>
                     <label className='mb-2 block font-bold'>تنزيل</label>
                     <input
                         type='text'
@@ -63,8 +116,8 @@ const FormInvoiceModel = ({handleSubmit , handleChange,discountDisabled ,handleI
                         value={reductionVal}
                     />
                     {reductionErr && <p className='text-sm text-red-500 m-0'>لا يمكن ان تكون قيمة التنزيل اكبر من باقي الحساب</p>}
-                </div>
-                <div>
+                </div> */}
+                {/* <div>
                     <label className='mb-2 block font-bold'>باقي الحساب</label>
                     <input
                         type='text'
@@ -75,8 +128,8 @@ const FormInvoiceModel = ({handleSubmit , handleChange,discountDisabled ,handleI
                         onChange={handleChange}
                         value={remainingVal}
                     />
-                </div>
-                <div>
+                </div> */}
+                {/* <div>
                     <label className='mb-2 block font-bold'>عدد الاصناف</label>
                     <input
                         type='text'
@@ -87,7 +140,7 @@ const FormInvoiceModel = ({handleSubmit , handleChange,discountDisabled ,handleI
                         onChange={handleChange}
                         value={itemsVal}
                     />
-                </div>
+                </div> */}
             </div>  
         </form>
     </div>

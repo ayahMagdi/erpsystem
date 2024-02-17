@@ -6,6 +6,7 @@ import Search from '../components/Search'
 import Sidebar from '../components/Sidebar'
 import TableBalance from '../components/tablemodels/TableBalance'
 import { useStateValue } from '../context/stateProvider'
+import GlobalTitle from '../components/globalComponents/GlobalTitle'
 
 const ClientBalance = ({search , searchItem ,getRecordReduction}) => {
 
@@ -25,12 +26,12 @@ const ClientBalance = ({search , searchItem ,getRecordReduction}) => {
 
   return (
    <div>
-     <div className="flex justify-start items-start w-full gap-10">
+     <div className="block 2xl:flex justify-start items-start w-full gap-10">
        <div className="w-1/5">
           <Sidebar logOut={confirmLogOut} />
        </div>
-       <div className="w-4/5 pl-8 h-screen flex flex-col">
-       <h2 className='text-center text-4xl font-bold my-5 text-main'>رصيد العملاء</h2>
+       <div className="w-5/5 2xl:w-4/5 px-[10px] 2xl:pl-8 h-screen flex flex-col">
+        <GlobalTitle title='رصيد العملاء' />
        <Search handleSearch={() => handleSearch} searchItem={searchItem} placeholder='ابحث بالكود' />
        <TableBalance 
           nameText='اسم العميل'
@@ -45,8 +46,8 @@ const ClientBalance = ({search , searchItem ,getRecordReduction}) => {
           getRecordReduction={getRecordReduction}
       />
        <div className='text-center mb-5'>
-           <h3>اجمالي باقي الحساب</h3>
-           <div className='border w-full p-4 rounded-md border-main mt-3 font-bold text-lg'>{totalbalance}</div>
+           <h3 className='text-xs md:text-base'>اجمالي باقي الحساب</h3>
+           <div className='border w-full text-xs p-4 rounded-md border-main mt-3 font-bold md:text-lg'>{totalbalance}</div>
        </div>
       <Goback />
        </div>

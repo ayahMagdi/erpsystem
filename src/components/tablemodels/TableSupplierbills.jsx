@@ -4,6 +4,7 @@ import { faClose, faEye, faPrint } from "@fortawesome/free-solid-svg-icons"
 import { useStateValue } from "../../context/stateProvider"
 import { useReactToPrint } from 'react-to-print';
 import PrintInvoice from "../handleinvoices/PrintInvoice";
+import GlobalTableHead from "../globalComponents/GlobalTableHead";
 
 const TableSupplierbills = ({allbills,filteredItems , isSearched , bills ,title ,name,checkInvoice}) => {
 
@@ -34,52 +35,43 @@ const TableSupplierbills = ({allbills,filteredItems , isSearched , bills ,title 
           setShowPrint(true)
       }
 
+   const tableHead = ['رقم الفاتورة' , 'التاريخ' , name , 'اجمالي الفاتورة' , 'تنزيل' , 'باقي الحساب' , 'عرض' , 'طباعة']
+
 
   return (
       <div className={`my-5 mx-auto w-full border shadow overflow-y-auto`}>
         <table className="table-auto w-full text-center border" style={{borderCollapse: 'collapse'}}>
-         <thead className="sticky top-0 bg-main text-white border-b">
-               <tr className='border-b border-slate-300'>
-                  <th scope="col" style={{border: '1px solid #00000024'}} className="px-6 py-3">رقم الفاتورة</th>
-                  <th scope="col" style={{border: '1px solid #00000024'}} className="px-6 py-3">التاريخ</th>
-                  <th scope="col" style={{border: '1px solid #00000024'}} className="px-6 py-3">{name}</th>
-                  <th scope="col" style={{border: '1px solid #00000024'}} className="px-6 py-3">اجمالي الفاتورة</th>
-                  <th scope="col" style={{border: '1px solid #00000024'}} className="px-6 py-3">تنزيل</th>
-                  <th scope="col" style={{border: '1px solid #00000024'}} className="px-6 py-3">باقي الحساب</th>
-                  <th scope="col" style={{border: '1px solid #00000024'}} className="px-6 py-3">عرض</th>
-                  <th scope="col" style={{border: '1px solid #00000024'}} className="px-6 py-3">طباعة</th>
-               </tr>
-         </thead>
+         <GlobalTableHead data={tableHead} />
          <tbody className={noItems ? 'hidden' : 'visible' }>
                {isSearched ? filteredItems?.map((e , i) => (
                <tr className='border-b border-slate-300 even:bg-tablerow' key={i}>
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{e.invoice}</td>
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{e.date}</td>
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{e.supplierName || e.clientName}</td>
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{e.totalwd}</td>
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{e.reduction}</td>
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{e.remaining}</td>
-                  <td className="px-6 py-3 cursor-pointer" style={{border: '1px solid #00000024'}} onClick={() => handleShow(e.invoice)}>
-                     <FontAwesomeIcon icon={faEye} />
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{e.invoice}</td>
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{e.date}</td>
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{e.supplierName || e.clientName}</td>
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{e.totalwd}</td>
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{e.reduction}</td>
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{e.remaining}</td>
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 cursor-pointe" style={{border: '1px solid #00000024'}} onClick={() => handleShow(e.invoice)}>
+                     <FontAwesomeIcon icon={faEye} className='text-[6px] md:text-sm 2xl:text-base' />
                   </td>
-                  <td className="px-6 py-3 cursor-pointer" style={{border: '1px solid #00000024'}} onClick={() => handlePrint(e.invoice)}>
-                     <FontAwesomeIcon icon={faPrint} />
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 cursor-pointe" style={{border: '1px solid #00000024'}} onClick={() => handlePrint(e.invoice)}>
+                     <FontAwesomeIcon icon={faPrint} className='text-[6px] md:text-sm 2xl:text-base' />
                   </td>
                </tr>
                ))
                : bills?.map((e , i) => (
                   <tr className='border-b border-slate-300 even:bg-tablerow' key={i}>
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{e.invoice}</td>
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{e.date}</td>
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{e.supplierName || e.clientName}</td>
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{e.totalwd}</td>
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{e.reduction}</td>
-                  <td className="px-6 py-3" style={{border: '1px solid #00000024'}}>{e.remaining}</td>
-                  <td className="px-6 py-3 cursor-pointer" style={{border: '1px solid #00000024'}} onClick={() => handleShow(e.invoice)}>
-                     <FontAwesomeIcon icon={faEye} />
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{e.invoice}</td>
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{e.date}</td>
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{e.supplierName || e.clientName}</td>
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{e.totalwd}</td>
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{e.reduction}</td>
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 text-[6px] md:text-sm 2xl:text-base" style={{border: '1px solid #00000024'}}>{e.remaining}</td>
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 cursor-pointe" style={{border: '1px solid #00000024'}} onClick={() => handleShow(e.invoice)}>
+                     <FontAwesomeIcon icon={faEye} className='text-[6px] md:text-sm 2xl:text-base' />
                   </td>
-                  <td className="px-6 py-3 cursor-pointer" style={{border: '1px solid #00000024'}} onClick={() => handlePrint(e.invoice)}>
-                     <FontAwesomeIcon icon={faPrint} />
+                  <td className="px-2 py-1 2xl:px-6 2xl:py-3 cursor-pointe" style={{border: '1px solid #00000024'}} onClick={() => handlePrint(e.invoice)}>
+                     <FontAwesomeIcon icon={faPrint} className='text-[6px] md:text-sm 2xl:text-base' />
                   </td>
                </tr>
                ))}

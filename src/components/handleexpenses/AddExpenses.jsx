@@ -62,7 +62,7 @@ const AddExpenses = ({isAdded}) => {
            dateVal={expensesList.date}
            reasonVal={expensesList.reason}
          />
-         <ModelBtns handlecancel={cancelAdd} form='my-form' title="تسجيل" cancelTitle='الغاء' btnStyle={'w-60 py-3 text-lg'} margin={'mt-10'} />
+         <ModelBtns handlecancel={cancelAdd} form='my-form' title="تسجيل" cancelTitle='الغاء' btnStyle={'w-60 py-3 text-lg'} margin={'mt-5 md:mt-10'} />
     </div>
   )
 }

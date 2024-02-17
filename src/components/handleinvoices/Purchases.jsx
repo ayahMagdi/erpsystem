@@ -302,7 +302,7 @@ const Purchases = () => {
   }
 
   return (
-    <div className='py-3 max-h-screen'>
+    <div className='pb-3 max-h-screen'>
         <FormInvoicesModel 
             title='فاتورة المشتريات' 
             handleSubmit={handleSubmit} 
@@ -330,7 +330,7 @@ const Purchases = () => {
             emptyCode={emptyCode}
             emptyPurchas={emptyPurchas}
         />
-        <ModelBtns title={edit ? 'تعديل' : 'اضافة'} form='my-form' cancelTitle='تفريغ الحقول' handlecancel={emptyForm} btnStyle={'w-40 py-2'} margin={'mt-5'} />
+        <ModelBtns title={edit ? 'تعديل' : 'اضافة'} form='my-form' cancelTitle='تفريغ الحقول' handlecancel={emptyForm} btnStyle={'w-24 text-xs md:text-base md:w-40 py-2'} margin={'mt-5'} />
         <TableInvoices 
               purchases={purchases} 
               getRecord={getRecord}
@@ -352,7 +352,7 @@ const Purchases = () => {
              totalDisabled={totalDisabled}
              discountDisabled={discountDisabled}
         />
-        <ModelBtns title='تسجيل' cancelTitle='الغاء' handleRegistration={handleRegistration} btnStyle={'w-40 py-2'} margin={'mt-5'} handlecancel={() => setShow(true)} />
+        <ModelBtns title='تسجيل' cancelTitle='الغاء' handleRegistration={handleRegistration} btnStyle={'w-24 text-xs md:text-base md:w-40 py-2'} margin={'mt-5'} handlecancel={() => setShow(true)} />
         {show && <ConfirmationButton title='هل تريد الغاء التسجيل؟' confirm={handleCancel} cancel={() => setShow(false)} />}
     </div>
   )

@@ -91,8 +91,8 @@ const AddProduct = ({isAdded}) => {
     }
 
   return (
-    <div className='mt-8'>
-        <FormItemsModel title="اضافة منتج جديد" 
+    <div>
+        <FormItemsModel 
           codeVal={productInfo.code} 
           handleSubmit={handleSubmit} 
           handleChange={handleChange} 
@@ -108,7 +108,7 @@ const AddProduct = ({isAdded}) => {
           isDisabled={false}
           handleSelectChange={handleSelectChange}
         />
-        <ModelBtns handlecancel={() => setShow(true)} form='my-form' title="تسجيل" cancelTitle='الغاء' btnStyle={'w-48 py-3 text-lg'} margin={'mt-10'} />
+        <ModelBtns handlecancel={() => setShow(true)} form='my-form' title="تسجيل" cancelTitle='الغاء' bigOne='bigOne' margin={'mt-7 mb-10 md:mt-10'} />
         {show && <ConfirmationButton title='هل تريد الغاء التسجيل؟' confirm={cancelAdd} cancel={() => setShow(false)} />}
     </div>
   )

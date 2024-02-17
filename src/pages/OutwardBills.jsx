@@ -6,6 +6,7 @@ import isEqual from 'lodash/isEqual';
 import Sidebar from '../components/Sidebar';
 import ConfirmSignout from '../components/ConfirmSignout';
 import Goback from '../components/Goback';
+import GlobalTitle from '../components/globalComponents/GlobalTitle';
 
 const OutwardBills = () => {
 
@@ -132,12 +133,13 @@ useEffect(() => {
 
   return (
     <div>
-    <div className="flex justify-start items-start w-full gap-10">
+    <div className="block 2xl:flex justify-start items-start w-full gap-10">
         <div className="w-1/5">
           <Sidebar logOut={confirmLogOut} />
         </div>
-        <div className="w-4/5 pl-8 h-screen flex flex-col">
-           <FilterInvoices title='فواتير الخارج' 
+        <div className="w-5/5 2xl:w-4/5 px-[10px] 2xl:pl-8 h-screen flex flex-col">
+           <GlobalTitle title='فواتير الخارج' />
+           <FilterInvoices 
             handlecancel={handlecancel} 
             getinvoices={getinvoices}
             handleChangeInvoices={(value) => handleSelectChange(value, 'filterinvoices')}

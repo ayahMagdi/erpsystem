@@ -6,6 +6,7 @@ import Goback from "../components/Goback";
 import Sidebar from "../components/Sidebar";
 import Search from "../components/Search";
 import ConfirmSignout from "../components/ConfirmSignout";
+import GlobalTitle from "../components/globalComponents/GlobalTitle";
 
 const ClientBills = ({searchItem , search}) => {
  
@@ -42,12 +43,12 @@ const ClientBills = ({searchItem , search}) => {
 
   return (
     <div>
-    <div className="flex justify-start items-start w-full gap-10">
+    <div className="block 2xl:flex justify-start items-start w-full gap-10">
       <div className="w-1/5">
          <Sidebar logOut={confirmLogOut} />
       </div>
-      <div className="w-4/5 pl-8 h-screen flex flex-col">
-        <h2 className='text-center text-4xl font-bold my-5 text-main'>فواتير العملاء</h2>
+      <div className="w-5/5 2xl:w-4/5 px-[10px] 2xl:pl-8 h-screen flex flex-col">
+         <GlobalTitle title='فواتير العملاء' />
         <Search handleSearch={() => handleSearch} searchItem={searchItem} placeholder='ابحث بالاسم او الكود' />
         <TableSupplierbills 
             isSearched={handleSearch.length && search.length} 

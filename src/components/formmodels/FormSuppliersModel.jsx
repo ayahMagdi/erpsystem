@@ -1,13 +1,20 @@
+import GlobalInput from "../globalComponents/GlobalInput"
 
-const FormSuppliersModel = ({handleSubmit ,title ,handleChange ,codeVal ,nameVal ,phoneVal,nameExist ,checkPhone}) => {
+const FormSuppliersModel = ({handleSubmit ,handleChange ,codeVal ,nameVal ,phoneVal,nameExist ,checkPhone}) => {
      
     return (
-    <div>
-         <div className='mt-8'>
-            <h2 className='text-center text-3xl font-bold text-main'>{title}</h2>
-            <form className='mt-10' onSubmit={handleSubmit} id='my-form'>
-                <div className='grid grid-cols-2 gap-6'>
-                    <div>
+        <div>
+            <form onSubmit={handleSubmit} id='my-form'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                  <GlobalInput
+                        title='كود المورد'
+                        name='code'
+                        value={codeVal}
+                        placeholder='11223344556677'
+                        handleChange={handleChange}
+                        disabled
+                   />
+                    {/* <div>
                         <label className='mb-4 block'>كود المورد</label>
                         <input
                             type='text'
@@ -18,8 +25,31 @@ const FormSuppliersModel = ({handleSubmit ,title ,handleChange ,codeVal ,nameVal
                             placeholder='مثال (123456789112288)'
                             value={codeVal}
                         />
-                    </div>
-                    <div>
+                    </div> */}
+                     <GlobalInput 
+                            title='اسم المورد'
+                            name='name'
+                            err={nameExist}
+                            value={nameVal}
+                            errMsg='هذا المورد موجود بالفعل'
+                            placeholder='ايه مجدي'
+                            handleChange={handleChange}
+                            minLength='3'
+                            maxLength='30'
+                    />
+                     <GlobalInput 
+                            title='رقم الهاتف'
+                            name='phone'
+                            err={checkPhone}
+                            value={phoneVal}
+                            errMsg='رقم الهاف يبدأ ب (01)'
+                            placeholder='01201201201'
+                            handleChange={handleChange}
+                            minLength='11'
+                            maxLength='11'
+                            pattern="^01\d{9}$"
+                    />
+                    {/* <div>
                         <label className='mb-4 block'>اسم المورد</label>
                         <input
                             type='text'
@@ -36,8 +66,8 @@ const FormSuppliersModel = ({handleSubmit ,title ,handleChange ,codeVal ,nameVal
                             value={nameVal}
                         />
                         {nameExist && <p className='text-red-500 mt-3'>هذا المورد موجود بالفعل</p>}
-                    </div> 
-                    <div>
+                    </div>  */}
+                    {/* <div>
                         <label className='mb-4 block'>رقم الهاتف</label>
                         <input
                             type='text'
@@ -52,11 +82,10 @@ const FormSuppliersModel = ({handleSubmit ,title ,handleChange ,codeVal ,nameVal
                             value={phoneVal}
                         />
                         {checkPhone && <p className='text-red-500 mt-3'> رقم الهاتف يبدأ ب (01) </p>}
-                    </div>
+                    </div> */}
                 </div>   
             </form>
         </div>
-    </div>
   )
 }
 

@@ -74,9 +74,8 @@ const EditSupplier = ({supplier,isEdited}) => {
     }
 
   return (
-    <div className='mt-8'>
+    <div>
     <FormSuppliersModel 
-            title="تعديل المورد"
             handleSubmit={handleSubmit}
             handleChange={handleChange}
             codeVal={newArr.code}
@@ -85,7 +84,7 @@ const EditSupplier = ({supplier,isEdited}) => {
             nameExist={nameExist}
             checkPhone={checkPhone}
     />
-    <ModelBtns handlecancel={() => setShow(true)} form='my-form' title="تعديل" cancelTitle='الغاء' btnStyle={'w-60 py-3 text-lg'} margin={'mt-10'} />
+    <ModelBtns handlecancel={() => setShow(true)} form='my-form' title="تعديل" cancelTitle='الغاء' bigOne='bigOne' margin={'mt-7 mb-10 md:mt-10'} />
     {show && <ConfirmationButton title='هل تريد الغاء التعديل؟' confirm={cancelEdit} cancel={() => setShow(false)} />}
 </div>
   )

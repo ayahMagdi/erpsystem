@@ -4,7 +4,7 @@ import FormFilter from "../formmodels/FormFilter"
 const FilterInvoices = ({title,handlecancel,invoiceval,dateval,name,nameplaceholder,suppliername,itemname,getinvoices,handleChangeInvoices,handleChangeDates,handleChangeSuppliers,handleChangeItems,getdates,getsuppliers,getitems,handleSubmit}) => {
 
   return (
-    <div className='mt-5 mb-1'>
+    <div className='mb-1'>
         <h2 className='text-center text-3xl font-bold text-main'>{title}</h2>
         <div className='my-3'>
             <FormFilter 

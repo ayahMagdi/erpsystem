@@ -4,8 +4,8 @@ import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useStateValue } from '../../context/stateProvider';
 import ConfirmDelete from '../ConfirmDelete';
-import GlobalTableHead from '../GlobalTableModel/GlobalTableHead';
-import GlobalTableBody from '../GlobalTableModel/GlobalTableBody';
+import GlobalTableHead from '../globalComponents/GlobalTableHead';
+import GlobalTableBody from '../globalComponents/GlobalTableBody';
 
 const TableClientsContent = ({getClient , filteredItems , isSearched , isDeleted ,checkSearch}) => {
 

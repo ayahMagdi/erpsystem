@@ -4,8 +4,8 @@ import { useStateValue } from '../../context/stateProvider';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import ConfirmDelete from '../ConfirmDelete';
-import GlobalTableHead from '../GlobalTableModel/GlobalTableHead';
-import GlobalTableBody from '../GlobalTableModel/GlobalTableBody';
+import GlobalTableHead from '../globalComponents/GlobalTableHead';
+import GlobalTableBody from '../globalComponents/GlobalTableBody';
 
 const TableContent = ({getRecord , filteredItems ,isSearched , isDeleted,checkSearch}) => {
 
