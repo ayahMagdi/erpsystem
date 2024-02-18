@@ -39,12 +39,12 @@ const Landing = () => {
 
   return (
     <div>
-      <div className="block 2xl:flex justify-start items-start w-full gap-10 relative">
+      <div className="block 2xl:flex justify-start items-start w-full gap-10">
         {show && <SuccessMsg title='تم تسجيل الدخول بنجاح' />}
         <div className="w-1/5">
            <Sidebar logOut={confirmLogOut} />
         </div>
-        <div className="w-5/5 px-[10px] 2xl:pl-8 h-screen flex flex-col 2xl:mr-0 2xl:w-4/5">
+        <div className="w-5/5 px-[10px] 2xl:pl-8 h-screen flex flex-col 2xl:w-4/5">
           <div className="">
              <BarChart />
           </div>

@@ -9,10 +9,10 @@ const SignOut = ({logOut}) => {
         <div>
           <FontAwesomeIcon 
             icon={faSignOut} 
-            className='rotate-180 text-white font-light' 
+            className='rotate-180 text-white font-light text-xs 2xl:text-xl' 
           />
         </div>
-        <h2 className='text-xs md:text-base'>تسجيل الخروج</h2>
+        <h2 className='text-xs 2xl:text-base'>تسجيل الخروج</h2>
       </div>
     </div>
   )
