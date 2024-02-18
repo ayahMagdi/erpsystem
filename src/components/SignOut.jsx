@@ -5,14 +5,14 @@ const SignOut = ({logOut}) => {
     
   return (
     <div onClick={logOut}>
-      <div className='flex cursor-pointer gap-3 2xl:py-[6px] 2xl:px-6 font-bold items-center justify-center 2xl:justify-start'>
+      <div className='flex cursor-pointer gap-3 py-[6px] px-6 font-bold items-center justify-start'>
         <div>
           <FontAwesomeIcon 
             icon={faSignOut} 
-            className='rotate-180 text-white text-xs 2xl:text-xl font-light' 
+            className='rotate-180 text-white font-light' 
           />
         </div>
-        <h2 className='hidden 2xl:block'>تسجيل الخروج</h2>
+        <h2 className='text-xs md:text-base'>تسجيل الخروج</h2>
       </div>
     </div>
   )

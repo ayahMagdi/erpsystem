@@ -342,27 +342,29 @@ const Sidebar = ({logOut}) => {
 
     }, [location.pathname , localStorage.getItem('branch')])
 
+    const [sidebarSize , setSidebarSize] = useState(false)
+
   return (
-    <div className='fixed top-0 bottom-0 right-[-310px] 2xl:right-0 z-10 w-[310px] shadow-3xl h-screen'>
-         <div className="flex 2xl:hidden w-8 h-8 md:w-14 md:h-14 bg-white rounded-full absolute -left-10 md:-left-16 top-3 text-main shadow-[0_0_15px_1px_#E8EAF6;] justify-center items-center">
-            <FontAwesomeIcon icon={faBars} className='text-xs md:text-base' />
+    <div className={`fixed w-screen 2xl:w-[310px] 2xl:bg-none top-0 bottom-0 2xl:right-0 z-10 transition-all h-screen ${sidebarSize ? 'right-0 bg-[rgba(9,8,8,0.1)]' : 'right-[-260px] md:right-[-310px]'}`}>
+         <div className="flex 2xl:hidden w-8 h-8 md:w-14 md:h-14 bg-white cursor-pointer rounded-full transition-all absolute right-[260px] md:right-[320px] top-3 text-main shadow-[0_0_15px_1px_#E8EAF6;] justify-center items-center" onClick={() => setSidebarSize(prev => !prev)}>
+            <FontAwesomeIcon icon={sidebarSize ? faClose : faBars} className='text-xs transition-all md:text-base' />
         </div>
-        <div className='px-6 bg-gradient-to-b h-full from-main to-[rgb(51_159_247)] text-white'>
-            <div className='p-7 flex justify-center rounded-full'>
-                <img src={logoImg} alt='logo' className='w-40' />
+        <div className='px-6 bg-gradient-to-b h-full from-main transition-all w-[250px] md:w-[310px] to-[rgb(51_159_247)] text-white'>
+            <div className='p-4 md:p-7 flex justify-center rounded-full'>
+                <img src={logoImg} alt='logo' className='w-24 md:w-40' />
             </div>
         <div>
             {sidebarLinks?.map(e => (
-                <div className='border-b border-[#e5e7eb24] last-of-type:border-none flex justify-center items-center 2xl:block' key={e.active}>
-                    <div className={`px-[8px] py-[6px] 2xl:py-[5px] 2xl:px-6 font-bold rounded-2xl cursor-pointer ${activeLink === e.active && 'bg-gradient-to-l from-[rgb(250_250_250)] to-[rgb(225_234_238)] transition-all'}`} onClick={() => handleClick(e.active)}>
+                <div className='border-b border-[#e5e7eb24] last-of-type:border-none ' key={e.active}>
+                    <div className={`py-[5px] px-6 font-bold rounded-2xl cursor-pointer ${activeLink === e.active && 'bg-gradient-to-l from-[rgb(250_250_250)] to-[rgb(225_234_238)] transition-all'}`} onClick={() => handleClick(e.active)}>
                         <Link to={e.branches ? '' : e.link} className={`flex justify-between transition-all relative ${activeLink === e.active && 'text-main'}`}>
                             <div className={`flex justify-start items-center gap-3`}>
                                 <FontAwesomeIcon icon={e.icon} className='text-xs 2xl:text-xl' />
-                                <div>{e.title}</div>
+                                <div className='text-xs md:text-base'>{e.title}</div>
                             </div>
                             {e.branches && 
                                 <div>
-                                    <FontAwesomeIcon icon={activeLink === e.active ? faChevronUp : faChevronDown} />
+                                    <FontAwesomeIcon icon={activeLink === e.active ? faChevronUp : faChevronDown} className='text-xs md:text-base' />
                                 </div>
                             } 
                         </Link>
@@ -372,8 +374,8 @@ const Sidebar = ({logOut}) => {
                             <div className='border-b border-[#e5e7eb24] cursor-pointer font-bold last-of-type:border-none hover:bg-gradient-to-l hover:from-[rgb(250_250_250)] hover:to-[rgb(225_234_238)] hover:text-main hover:rounded-2xl' key={b.active} onClick={() => handleClickBranch(b.active)}>
                                 <Link to={b.link}>
                                     <div className={`flex justify-start text-sm items-center transition-all gap-3 rounded-2xl p-2 px-4 ${activeBranch === b.active && 'bg-gradient-to-l from-[rgb(250_250_250)] to-[rgb(225_234_238)] text-main'}`}>
-                                        <FontAwesomeIcon icon={b.icon} />
-                                        <div>{b.title}</div>
+                                        <FontAwesomeIcon icon={b.icon} className='text-xs md:text-base' />
+                                        <div className='text-[8px] md:text-base'>{b.title}</div>
                                     </div>
                                 </Link>
                             </div>
